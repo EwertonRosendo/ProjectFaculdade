@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{%load static%}
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+   <!--------- <title>Responsive Navigation Menu</title>------>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <nav>
+      <div class="logo">DesabaMenos</div>
+      <input type="checkbox" id="click">
+      <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+        <li><a id="home" class="#" href="#">Home</a></li>
+        <li><a id="blog" class="#" href="#">Blog</a></li>
+        <li><a id="profile" href="#">Meu perfil</a></li>
+        <li><a id="maps" href="#">Maps</a></li>
+        <li><a id="about" href="#">About</a></li>
+      </ul>
+    </nav>
+    <script>
+      let el = document. getElementById('blog');
+      el. classList. remove('#');
+      el. classList. add('active');
+    </script>
+    <div class="content">
+      <div class="post">
+        <img src="https://github.com/EwertonRosendo/Web_Site/blob/main/imgs/desliza1.jpg?raw=true" alt="">
+      </div>
+    </div>
+
+  </body>
+</html>

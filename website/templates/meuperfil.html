@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+{% load static %}
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+   <!--------- <title>Responsive Navigation Menu</title>------>
+    <link rel="stylesheet" href=" {% static 'css/style.css' %} ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <nav>
+      <div class="logo">DesabaMenos</div>
+      <input type="checkbox" id="click">
+      <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+        <li><a id="home" class="#" href="#">Home</a></li>
+        <li><a id="blog" class="#" href="#">Blog</a></li>
+        <li><a id="profile" href="#">Meu perfil</a></li>
+        <li><a id="maps" href="#">Maps</a></li>
+        <li><a id="about" href="#">About</a></li>
+      </ul>
+    </nav>
+    <script>
+      let el = document. getElementById('profile');
+      el. classList. remove('#');
+      el. classList. add('active');
+    </script>
+    <div class="content">
+
+      <div class="background-perfil" >
+        <img src="{% static 'img/avatar.png' %}" alt="">
+      </div>
+
+      <div class="informacoes-do-perfil">
+        <p>Informações Basicas</p>
+        
+        <table>
+          <thead>
+            <td><p>Nome: </p></td>
+            <td><p>Data de Nascimento: </p></td>
+            <td><p>CPF</p></td>
+            <td><p>RG</p></td>
+            <td><p>telefone</p></td>
+          </thead>
+          <tr>
+            <td><p>Ewerton Rosendo da Silva</p></td>
+            <td><p>03/10/2003</p></td>
+            <td><p>783.432.123-23</p></td>
+            <td><p>3454832</p></td>
+            <td><p>(81) 9 4362 7325</p></td>
+          </tr>
+        </table>
+
+        <table>
+          <thead>
+            <td><p>Genero: </p></td>
+            <td><p>País de origem: </p></td>
+            <td><p>Email</p></td>
+          </thead>
+          <tr>
+            <td><p>Masculino</p></td>
+            <td><p>Brazil</p></td>
+            <td><p>tres.patetas@gmail.com</p></td>
+          </tr>
+        </table>
+        <br><br>
+        <p>Endereço</p>
+
+        <table>
+          <thead>
+            <td><p>Cep: </p></td>
+            <td><p>Bairro: </p></td>
+            <td><p>Complemento:</p></td>
+          </thead>
+          <tr>
+            <td><p>34635-632</p></td>
+            <td><p>Boa Vista</p></td>
+            <td><p>Casa</p></td>
+          </tr>
+        </table>
+
+        <table>
+          <thead>
+            <td><p>Endereço: </p></td>
+            <td><p>Estado: </p></td>
+            <td><p>Cidade:</p></td>
+          </thead>
+          <tr>
+            <td><p>Rua das oliveiras</p></td>
+            <td><p>PE</p></td>
+            <td><p>Recife</p></td>
+          </tr>
+        </table>
+        
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
