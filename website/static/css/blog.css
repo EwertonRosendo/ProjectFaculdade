@@ -147,7 +147,12 @@ input[type="checkbox"]{
   border: none;
   height: 100%;
 }
+
 .content .post .area-imagem{
   background-color: rgb(185, 185, 185);
   border-radius: 5px;
+}
+div .graficos{
+  width: 400px;
+  height: 400px;
 }

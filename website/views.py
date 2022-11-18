@@ -88,4 +88,8 @@ def maps(request):
 def home(request):
     return render(request, "home.html")
 
+def graficos(request):
+
+    return render(request, "graficos.html")
+
 
