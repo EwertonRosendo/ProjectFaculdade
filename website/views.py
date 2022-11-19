@@ -88,8 +88,15 @@ def maps(request):
 def home(request):
     return render(request, "home.html")
 
-def graficos(request):
 
+def graficos(request):
     return render(request, "graficos.html")
 
 
+def api(request):
+    locations = Location.objects.all()
+    context = {
+        'locations': locations,
+    }
+    
+    return render(request, 'api.html', context)

@@ -8,6 +8,7 @@ urlpatterns = [
     path('maps/', views.maps, name='blog' ),
     path('profile/', views.profile, name='profile'),
     path('home/', views.home, name='home'),
-    path('graficos/', views.graficos, name='graficos')
+    path('graficos/', views.graficos, name='graficos'),
+    path('api/', views.api, name='api')
     
 ]

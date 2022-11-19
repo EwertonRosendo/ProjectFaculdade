@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{%load static%}
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+   <!--------- <title>Responsive Navigation Menu</title>------>
+   <link rel="stylesheet" href="{% static 'css/api.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">DesabaMenos</div>
+      <input type="checkbox" id="click">  
+      <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+        <li><a id="home" class="#" href="#">Home</a></li>
+        <li><a id="blog" class="#" href="#">Blog</a></li>
+        <li><a id="profile" href="#">Meu perfil</a></li>
+        <li><a id="maps" href="#">Maps</a></li>
+        <li><a id="about" href="#">About</a></li>
+      </ul>
+    </nav>
+    <script>
+      let el = document. getElementById('blog');
+      el. classList. remove('#');
+      el. classList. add('active');
+    </script>
+    <div class="content">
+      
+<div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <tr>
+              <th scope="col" class="py-3 px-6">
+                  ID
+              </th>
+              <th scope="col" class="py-3 px-6">
+                  Cidade
+              </th>
+              <th scope="col" class="py-3 px-6">
+                  Latitude
+              </th>
+              <th scope="col" class="py-3 px-6">
+                  Longitude
+              </th>
+              <th scope="col" class="py-3 px-6">
+                  Action
+              </th>
+          </tr>
+      </thead>
+      <tbody>
+        {%for location in locations%}
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+              <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  {{location.id}}
+              </th>
+              <td class="py-4 px-6">
+                  {{location.city}}
+              </td>
+              <td class="py-4 px-6">
+                  {{location.lat}}
+              </td>
+              <td class="py-4 px-6">
+                  {{location.long}}
+              </td>
+              <td class="py-4 px-6">
+                  <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+              </td>
+          </tr>
+        {%endfor%}          
+      </tbody>
+  </table>
+  
+</div>
+
+    </div>
+
+  </body>
+</html>
