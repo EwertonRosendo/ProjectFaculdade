@@ -5,10 +5,11 @@
   <head>
     <meta charset="utf-8">
    <!--------- <title>Responsive Navigation Menu</title>------>
-   <link rel="stylesheet" href="{% static 'css/api.css' %}">
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{% static 'css/api.css' %}">
   </head>
   <body>
     <nav>
@@ -75,7 +76,21 @@
         {%endfor%}          
       </tbody>
   </table>
-  
+  <div class="pagination">
+    <span class="step-links">
+        {% if locations.has_previous %}
+            <a href="?page={{ locations.previous_page_number }}">anterior</a>
+        {% endif %}
+
+        <span class="current">
+            Página {{ locations.number }} of {{ locations.paginator.num_pages }}.
+        </span>
+
+        {% if locations.has_next %}
+            <a href="?page={{ locations.next_page_number }}">próxima</a>
+        {% endif %}
+    </span>
+</div>
 </div>
 
     </div>

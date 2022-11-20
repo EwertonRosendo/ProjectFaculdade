@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as django_login
+from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.contrib.auth.decorators import login_required
 import folium
 #import geocoder
@@ -94,9 +95,20 @@ def graficos(request):
 
 
 def api(request):
-    locations = Location.objects.all()
-    context = {
-        'locations': locations,
-    }
-    
-    return render(request, 'api.html', context)
+    locations_list = Location.objects.all()
+    paginator = Paginator(locations_list, 10)  # Mostra 10 localizações por página
+
+    # Make sure page request is an int. If not, deliver first page.
+    # Esteja certo de que o `page request` é um inteiro. Se não, mostre a primeira página.
+    try:
+        page = int(request.GET.get('page', '1'))
+    except ValueError:
+        page = 1
+
+    # Se o page request (9999) está fora da lista, mostre a última página.
+    try:
+        locations = paginator.page(page)
+    except (EmptyPage, InvalidPage):
+        locations = paginator.page(paginator.num_pages)
+
+    return render(request, 'api.html', {"locations": locations})
