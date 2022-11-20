@@ -11,7 +11,7 @@
 
 <p style="font-size:20;"><b>Ferramentas utilizadas</b></p>
 
-<p style=" text-align: justify">O projeto foi construido utilizando ferramentas conhecidas do mercado, como html5, css3, Python, Django. E atualmente estou desenvolvendo um CRUD para adicionar, editar, exibir e deletar as localizações armazenadas no nosso banco de dados, na pasta <a href="https://github.com/EwertonRosendo/ProjectFaculdade/blob/main/website/static/scripts/addLocations.py"> scripts</a> existe um script simples para leitura e armazenamento de novas localizações.</p>
+<p style=" text-align: justify">O projeto foi construido utilizando ferramentas conhecidas do mercado, como html5, css3, Python, Django. E atualmente estou desenvolvendo um CRUD para adicionar, editar, exibir e deletar as localizações armazenadas no nosso banco de dados, na pasta <a href="https://github.com/EwertonRosendo/ProjectFaculdade/blob/main/website/static/scripts/addLocations.py"> Scripts</a> existe um script simples para leitura e armazenamento de novas localizações, e para a criação dos graficos estou utilizando o ChatJs.</p>
 
 <p style=" text-align: justify">Felizmente o projeto já está perto de sua conclusão com a maioria das coisas que foram pensadas para que ele tivesse, ou seja, já me encontro na etapa de refinamento do software, onde dedicarei meu tempo a tratamento de erros e organização do projeto.</p>
 
