@@ -9,6 +9,7 @@ urlpatterns = [
     path('profile/', views.profile, name='profile'),
     path('home/', views.home, name='home'),
     path('graficos/', views.graficos, name='graficos'),
-    path('api/', views.api, name='api')
+    path('api/', views.api, name='api'),
+    path('api/edit/<int:location_pk>', views.location_edit, name='edit_location')
     
 ]

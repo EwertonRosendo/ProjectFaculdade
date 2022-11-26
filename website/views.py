@@ -8,6 +8,7 @@ import folium
 #import geocoder
 #from geopy.geocoders import Nominatim
 from .models import Location
+from .forms import LocationForm
 
 
 # Create your views here.
@@ -87,7 +88,11 @@ def maps(request):
 
 
 def home(request):
-    return render(request, "home.html")
+    locations = Location.objects.all()
+    context = {
+        'locations': locations
+    }
+    return render(request, "home.html", context)
 
 
 def graficos(request):
@@ -112,3 +117,19 @@ def api(request):
         locations = paginator.page(paginator.num_pages)
 
     return render(request, 'api.html', {"locations": locations})
+
+
+def location_edit(request, location_pk):
+
+    location = Location.objects.get(pk=location_pk)
+    form = LocationForm(request.POST or None, instance=location)
+
+    if request.POST:
+        if form.is_valid():
+            form.save()
+            return redirect('api')
+    context = {
+        'form': form,
+        'location': location_pk
+    }
+    return render(request, 'edit.html', context=context)

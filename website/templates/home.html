@@ -28,12 +28,48 @@
       let el = document. getElementById('blog');
       el. classList. remove('#');
       el. classList. add('active');
+      
     </script>
     <div class="content">
       <div class="post">
-        <img src="https://github.com/EwertonRosendo/Web_Site/blob/main/imgs/desliza1.jpg?raw=true" alt="">
+        <p>
+          {% for location in locations %}
+            {{location.city}}
+          {% endfor %}
+        </p>
+        <hr>
+        <p>
+          {% for location in locations %}
+            {{location.lat}}
+          {% endfor %}
+        </p>
+        <hr>
+        <p>
+          {% for location in locations %}
+            {{location.long}}
+          {% endfor %}
+        </p>
+
       </div>
     </div>
+    <p id="teste">igarassu recife paulista olinda</p>
+    <p id="numeros">12 34 23 27</p>
+    <script>
+      let text = document.getElementById('teste').innerHTML
+      console.log(text.split(' '))
+      
+      let numeros = document.getElementById('numeros').innerHTML
+      console.log(numeros)
+
+      numeros.split(' ')
+      console.log(numeros)
+      
+      for(var i = 0; i<numeros.length; i++){
+        parseInt(numeros[i])
+        console.log(numeros[i])
+      }
+
+    </script>
 
   </body>
 </html>
