@@ -71,6 +71,7 @@
               </td>
               <td class="py-4 px-6">
                   <a href="{% url 'edit_location' location.id %}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" >Edit</a>
+                  <a href="{% url 'location_delete' location.id %}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline" onclick="return confirm('Tem certeza que deseja deletar esta localização?')" >Delete</a>
                </td>
           </tr>
         {%endfor%}          

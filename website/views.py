@@ -133,3 +133,9 @@ def location_edit(request, location_pk):
         'location': location_pk
     }
     return render(request, 'edit.html', context=context)
+
+def location_delete(request, location_pk):
+    location = Location.objects.get(pk=location_pk)
+    location.delete()
+
+    return redirect('api')
