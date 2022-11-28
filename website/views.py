@@ -61,6 +61,7 @@ def profile(request):
 
 #@login_required(login_url='/account/')
 def maps(request):
+
     """
     — geolocator faz parte da funcionalidade que estava sendo desenvolvida
     — para quando nós tivessemos as coordenadas, fosse possivel conseguir a cidade
@@ -72,6 +73,8 @@ def maps(request):
 
     locations = Location.objects.all()
 
+
+
     for local in locations:
         #loc = [float(local.lat), float(local.long)]
         loc = [local.lat, local.long]
@@ -79,10 +82,19 @@ def maps(request):
         #city = location.raw['address']['city']
         folium.Circle(loc, tooltip=local.city, fill_color='red').add_to(m)
 
+
+
     m = m._repr_html_()
 
+    if request.POST:
+        form = LocationForm(request.POST or None)
+        if form.is_valid():
+            form.save()
+            return redirect('api')
+    form = LocationForm()
     context = {
         'm': m,
+        'form': form
     }
     return render(request, "maps.html", context)
 
@@ -122,7 +134,7 @@ def api(request):
 def location_edit(request, location_pk):
 
     location = Location.objects.get(pk=location_pk)
-    form = LocationForm(request.POST or None, instance=location)
+    form = LocationForm(request.POST, instance=location)
 
     if request.POST:
         if form.is_valid():
@@ -134,7 +146,14 @@ def location_edit(request, location_pk):
     }
     return render(request, 'edit.html', context=context)
 
+
+""" 
+A função location_delete é usada para deletar localizações.
+A função recebe um parametro que é a chave primaria do local que será
+deletado e o usa como argumento para chamar a função de deletar
+"""
 def location_delete(request, location_pk):
+
     location = Location.objects.get(pk=location_pk)
     location.delete()
 

@@ -17,18 +17,15 @@
         <i class="fas fa-bars"></i>
       </label>
       <ul>
-        <li><a id="home" class="#" href="#">Home</a></li>
-        <li><a id="blog" class="#" href="#">Blog</a></li>
-        <li><a id="profile" href="#">Meu perfil</a></li>
-        <li><a id="maps" href="#">Maps</a></li>
-        <li><a id="about" href="#">About</a></li>
+        <li><a href="#"> Posts</a></li>
+        <li><a id="home" class="#" href="{% url 'maps' %}">Maps</a></li>
+        <li><a id="blog" class="#" href="{% url 'profile' %}">Profile</a></li>
+        <li><a id="profile" href="{% url 'graficos' %}">Graficos</a></li>
+        <li><a id="maps" href="{% url 'api' %}">Api</a></li>
+        <li><a id="about" class='active'href="{% url 'account' %}">Sign In | Sign Up</a></li>
       </ul>
     </nav>
-    <script>
-      let el = document. getElementById('profile');
-      el. classList. remove('#');
-      el. classList. add('active');
-    </script>
+    
     <div class="content">
 
       <div class="background-perfil" >

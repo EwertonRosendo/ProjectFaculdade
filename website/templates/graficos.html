@@ -17,35 +17,32 @@
         <i class="fas fa-bars"></i>
       </label>
       <ul>
-        <li><a id="home" class="#" href="#">Home</a></li>
-        <li><a id="blog" class="#" href="#">Blog</a></li>
-        <li><a id="profile" href="#">Meu perfil</a></li>
-        <li><a id="maps" href="#">Maps</a></li>
-        <li><a id="about" href="#">About</a></li>
+        <li><a href="#">Posts</a></li>
+        <li><a id="home" class="#" href="{% url 'maps' %}">Maps</a></li>
+        <li><a id="blog" class="#" href="{% url 'profile' %}">Profile</a></li>
+        <li><a id="profile" href="{% url 'graficos' %}">Graficos</a></li>
+        <li><a id="maps" href="{% url 'api' %}">Api</a></li>
+        <li><a id="about" class='active'href="{% url 'account' %}">Sign In | Sign Up</a></li>
       </ul>
     </nav>
-    <script>
-      let el = document. getElementById('blog');
-      el. classList. remove('#');
-      el. classList. add('active');
-    </script>
+    
     <div class="content">
       <!--Area onde o primeiro grafico é desenhado -->
-      <h3>Municípios com ocorrência de escorregamentos ou deslizamentos de encostas nos últimos 4 anos por áreas de ocorrência, por medidas adotadas para evitar ou minimizar danos e por classe de tamanho da população do município</h3>
+      <p>Municípios com ocorrência de escorregamentos ou deslizamentos de encostas nos últimos 4 anos por áreas de ocorrência, por medidas adotadas para evitar ou minimizar danos e por classe de tamanho da população do município</p>
       <div class="graficos">
         <canvas id="grafico1"></canvas>
       </div>
       <!--Fim -->
       <hr>
       <!--Area onde o primeiro grafico é desenhado -->
-      <h3>Número de municípios, total e os que possuem encostas no perímetro urbano, por tipo de situação das encostas</h3>
+      <p>Número de municípios, total e os que possuem encostas no perímetro urbano, por tipo de situação das encostas</p>
       <div class="graficos">
         <canvas id="grafico2"></canvas>
       </div>
       <!--Fim -->
       <hr>
       <!--Area onde o primeiro grafico é desenhado -->
-      <h3>Municípios, total e atingidos por enchentes ou inundações graduais, enchurradas ou inundações bruscas ou escorregamentos ou deslizamenrtos de encostas nos últimos 4 anos, por algumas características dos desastres naturais e por classe de tamanho da população do município</h3>
+      <p>Municípios, total e atingidos por enchentes ou inundações graduais, enchurradas ou inundações bruscas ou escorregamentos ou deslizamenrtos de encostas nos últimos 4 anos, por algumas características dos desastres naturais e por classe de tamanho da população do município</p>
       <div class="graficos">
         <canvas id="grafico3"></canvas>
       </div>
