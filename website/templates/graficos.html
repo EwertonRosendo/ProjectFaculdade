@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
    <!--------- <title>Responsive Navigation Menu</title>------>
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link rel="stylesheet" href="{% static 'css/blog/blog.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
@@ -27,26 +27,27 @@
     </nav>
     
     <div class="content">
-      <!--Area onde o primeiro grafico é desenhado -->
-      <p>Municípios com ocorrência de escorregamentos ou deslizamentos de encostas nos últimos 4 anos por áreas de ocorrência, por medidas adotadas para evitar ou minimizar danos e por classe de tamanho da população do município</p>
-      <div class="graficos">
-        <canvas id="grafico1"></canvas>
+
+    <div class="graficos">
+      <div class="grafico">
+        <p>Municípios com ocorrência de escorregamentos ou deslizamentos de encostas nos últimos 4 anos por áreas de ocorrência, por medidas adotadas para evitar ou minimizar danos e por classe de tamanho da população do município</p>
+      <canvas id="grafico1"></canvas>
       </div>
-      <!--Fim -->
-      <hr>
-      <!--Area onde o primeiro grafico é desenhado -->
-      <p>Número de municípios, total e os que possuem encostas no perímetro urbano, por tipo de situação das encostas</p>
-      <div class="graficos">
+      <div class="grafico">
+        <p>Número de municípios, total e os que possuem encostas no perímetro urbano, por tipo de situação das encostas</p>
         <canvas id="grafico2"></canvas>
       </div>
-      <!--Fim -->
-      <hr>
-      <!--Area onde o primeiro grafico é desenhado -->
-      <p>Municípios, total e atingidos por enchentes ou inundações graduais, enchurradas ou inundações bruscas ou escorregamentos ou deslizamenrtos de encostas nos últimos 4 anos, por algumas características dos desastres naturais e por classe de tamanho da população do município</p>
-      <div class="graficos">
+
+      <div class="grafico">
+        <p>Municípios, total e atingidos por enchentes ou inundações graduais, enchurradas ou inundações bruscas ou escorregamentos ou deslizamenrtos de encostas nos últimos 4 anos, por algumas características dos desastres naturais e por classe de tamanho da população do município</p>
         <canvas id="grafico3"></canvas>
       </div>
-      <!--Fim -->
+
+      <div class="grafico">
+
+      </div>
+
+    </div>
 
 
 
@@ -61,11 +62,11 @@
       const ctx1 = document.getElementById('grafico1');
     
       new Chart(ctx1, {
-        type: 'bar',
+        type: 'line',
         data: {
           labels: ['Rondônia', 'Acre', 'Amazonas', 'Pará', 'Amapá', 'Tocatins', 'Maranhão', 'Piauí', 'Ceará', 'Rio Grande do Norte', 'Paraíba', 'Pernambuco', 'Alagoas', 'Sergipe', 'Bahia', 'Minas Gerais', 'Espirito Santo', 'Rio De Janeiro', 'São Paulo', 'Paraná', 'Santa Catarina', 'Rio Grande do Sul', 'Mato Grosso do Sul', 'Mato Grosso', 'Goias'],
           datasets: [{
-            label: 'Estados',
+            label: 'Municípios ',
             data: [8, 6, 25, 29, 1, 35, 57, 3, 15, 4, 8, 45, 29, 9, 56, 262, 46, 68, 106, 27, 94, 67, 7, 14, 19],
             borderWidth: 1
           }]
@@ -83,11 +84,11 @@
       const ctx2 = document.getElementById('grafico2');
     
       new Chart(ctx2, {
-        type: 'bar',
+        type: 'line',
         data: {
           labels: ['Rondônia', 'Acre', 'Amazonas', 'Roraima', 'Pará', 'Amapá', 'Tocatins', 'Maranhão', 'Piauí', 'Ceará', 'Rio Grande do Norte', 'Paraiba', 'Pernambuco', 'Alagoas', 'Sergipe', 'Bahia', 'Minas Gerais', 'Espirito Santo', 'Rio de Janeiro', 'São Paulo', 'Paraná', 'Santa Catarina', 'Rio Grande do Sul', 'Mato Grosso do Sul', 'Mato Grosso', 'Goias', 'Distrito Federal'],
           datasets: [{
-            label: 'Estados',
+            label: 'Municípios ',
             data: [52, 22, 62, 15, 143, 16, 139, 217, 221, 184, 166, 223, 185, 101, 75, 415, 853, 77, 91, 645, 399, 293, 467, 77, 126, 242, 1],
             borderWidth: 1
           }]
@@ -104,11 +105,11 @@
       const ctx3 = document.getElementById('grafico3');
     
       new Chart(ctx3, {
-        type: 'bar',
+        type: 'line',
         data: {
           labels: ['Rondônia', 'Acre', 'Amazonas', 'Roraima', 'Pará', 'Amapá', 'Tocatins', 'Maranhão', 'Piauí', 'Ceará', 'Rio Grande do Norte', 'Paraiba', 'Pernambuco', 'Alagoas', 'Sergipe', 'Bahia', 'Minas Gerais', 'Espirito Santo', 'Rio de Janeiro', 'São Paulo', 'Paraná', 'Santa Catarina', 'Rio Grande do Sul', 'Mato Grosso do Sul', 'Mato Grosso', 'Goias', 'Distrito Federal'],
           datasets: [{
-            label: 'Estados',
+            label: 'Municípios ',
             data: [2, 4, 19, 4, 13, 0, 3, 10, 2, 6, 2, 2, 28, 12, 2, 15, 26, 8, 6, 53, 20, 50, 60, 4, 9, 2, 0],
             borderWidth: 1
           }]

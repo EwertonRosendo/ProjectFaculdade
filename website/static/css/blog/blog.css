@@ -119,38 +119,11 @@ input[type="checkbox"]{
   margin-top: 30%;
 }
 
-.content .post{
-  width: 60%;
+.graficos{
+  display: grid;
+  grid-template-columns: 400 400;
+  row-gap: 200px;
 }
-
-.content .post .infos-post {
-  margin-left: 40px;
-}
-
-.content .post img{
-  width: 400px;
-  
-}
-
-.content .post{
-  margin-top: 2%;
-  display: block;
-  flex-direction: column;
-}
-
-.content .post table tr {
-  border: none;
-}
-.content .post table{
-  border: none;
-  height: 100%;
-}
-
-.content .post .area-imagem{
-  background-color: rgb(185, 185, 185);
-  border-radius: 5px;
-}
-div .graficos{
-  width: 400px;
-  height: 400px;
+.grafico canvas{
+  width: 50%;
 }
