@@ -134,12 +134,13 @@ def api(request):
 def location_edit(request, location_pk):
 
     location = Location.objects.get(pk=location_pk)
-    form = LocationForm(request.POST, instance=location)
+    form = LocationForm(request.POST or None, instance=location)
 
     if request.POST:
         if form.is_valid():
             form.save()
             return redirect('api')
+
     context = {
         'form': form,
         'location': location_pk

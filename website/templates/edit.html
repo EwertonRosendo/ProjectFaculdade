@@ -1,17 +1,37 @@
 <!DOCTYPE html>
+{% load static%}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{% static 'css/post/post.css' %}">
+    <script src="https://cdn.tailwindcss.com"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <form action="{% url 'edit_location' location %}" method="POST">
+    <nav>
+          <div class="logo">DesabaMenos</div>
+          <input type="checkbox" id="click">
+          <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+          </label>
+          <ul>
+            <li><a href="{% url 'post' %}">Posts</a></li>
+            <li><a id="home" class="#" href="{% url 'maps' %}">Maps</a></li>
+            <li><a id="blog" class="#" href="{% url 'profile' %}">Profile</a></li>
+            <li><a id="profile" href="{% url 'graficos' %}">Graficos</a></li>
+            <li><a id="maps" href="{% url 'api' %}">Api</a></li>
+            <li><a id="about" class='active'href="{% url 'account' %}">Sign In | Sign Up</a></li>
+          </ul>
+    </nav>
+    <div class="content">
+        <form action="{% url 'edit_location' location %}" method="POST">
         {% csrf_token %}
         {{form.as_p}}
-        <button type="submit">Atualizar</button>
-        <a href="{% url 'api' %}">cancelar</a>
+        <button type="submit" style="color:rgb(56, 56, 93) ;">Atualizar</button>
+        <a href="{% url 'api' %}" style="color:rgb(150, 101, 101) ;">cancelar</a>
     </form>
+    </div>
 </body>
 </html>
