@@ -158,3 +158,6 @@ def location_delete(request, location_pk):
     location.delete()
 
     return redirect('api')
+
+def post(request):
+    return render(request, 'post.html')

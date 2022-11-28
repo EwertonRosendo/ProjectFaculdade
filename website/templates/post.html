@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{%load static%}
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+   <!--------- <title>Responsive Navigation Menu</title>------>
+    <link rel="stylesheet" href="{% static 'css/post/post.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <nav>
+      <div class="logo">DesabaMenos</div>
+      <input type="checkbox" id="click">
+      <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+        <li><a href="{% url 'post' %}">Posts</a></li>
+        <li><a id="home" class="#" href="{% url 'maps' %}">Maps</a></li>
+        <li><a id="blog" class="#" href="{% url 'profile' %}">Profile</a></li>
+        <li><a id="profile" href="{% url 'graficos' %}">Graficos</a></li>
+        <li><a id="maps" href="{% url 'api' %}">Api</a></li>
+        <li><a id="about" class='active'href="{% url 'account' %}">Sign In | Sign Up</a></li>
+      </ul>
+    </nav>
+    
+    <div class="content">
+        <div class="linha">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126418.61139487526!2d-35.00788892793027!3d-8.041997641282153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab196f88c446e5%3A0x3c9ef52922447fd4!2sRecife%20-%20PE!5e0!3m2!1spt-BR!2sbr!4v1667516281242!5m2!1spt-BR!2sbr" width="100%" height="100%"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias ipsam aspernatur rem doloremque laboriosam autem quia architecto quidem soluta, corrupti, deserunt quam consectetur explicabo et placeat nobis sed ex veritatis!</p>
+          
+        </div>
+        <div class="main-blog">
+        
+          <div class="blog">
+            
+            <div class="img-post">
+              <img src="https://s2.glbimg.com/Qk2UMbPZGOPD5MsAh38-qKkbD7w=/0x0:1032x581/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/5/G/5eQcCMS36bq3i0yROggg/deslizamento-recife.jpeg" alt="" width="400" height="400" >
+            </div>
+            <div class="desc-post">
+              <p class="titulo">Recife - Pau amarelo </p>
+              <p class="descricao"> <b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum deserunt autem reprehenderit non, optio officia aut possimus! Repudiandae, repellendus. Quia sed ut officiis accusantium enim minima, velit nostrum corporis beatae! </b></p>
+            </div>
+          </div>
+          <hr>
+          <div class="blog">
+            <div class="img-post">
+              <img src="https://imagens.ne10.uol.com.br/veiculos/_midias/jpg/2020/06/16/597x330/1_rb__3726-8208383.jpg" alt="" width="400" height="400" >
+            </div>
+            <div class="desc-post">
+              <p class="titulo">Recife - Pau amarelo </p>
+              <p class="descricao"> <b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum deserunt autem reprehenderit non, optio officia aut possimus! Repudiandae, repellendus. Quia sed ut officiis accusantium enim minima, velit nostrum corporis beatae! </b></p>
+            </div>
+          </div>
+          <hr>
+          <div class="blog">
+            <div class="img-post">
+              <img src="https://imagens.ne10.uol.com.br/img/imagens/2019/07/16/f6b043d9c9_barreira.jpg" alt="" width="400" height="400" >
+            </div>
+            <div class="desc-post">
+              <p class="titulo">Recife - Pau amarelo </p>
+              <p class="descricao"> <b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum deserunt autem reprehenderit non, optio officia aut possimus! Repudiandae, repellendus. Quia sed ut officiis accusantium enim minima, velit nostrum corporis beatae! </b></p>
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+
+
+<!--Aqui é onde configuramos o grafico -->
+
+  </body>
+</html>
