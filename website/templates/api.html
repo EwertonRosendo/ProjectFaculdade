@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="{% static 'css/api.css' %}">
+    <link rel="stylesheet" href="{% static 'css/api/api.css' %}">
   </head>
   <body>
     <nav>
-      <div class="logo">DesabaMenos</div>
+      <div class="logo"><p>DesabaMenos</p></div>
       <input type="checkbox" id="click">  
       <label for="click" class="menu-btn">
         <i class="fas fa-bars"></i>
@@ -30,7 +30,7 @@
     
     <div class="content">
       
-<div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+<div class="overflow-x-auto relative shadow-md ">
   <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
       <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
@@ -77,15 +77,15 @@
   <div class="pagination">
     <span class="step-links">
         {% if locations.has_previous %}
-            <a href="?page={{ locations.previous_page_number }}">anterior</a>
+            <a href="?page={{ locations.previous_page_number }}" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">anterior</a>
         {% endif %}
 
         <span class="current">
-            Página {{ locations.number }} of {{ locations.paginator.num_pages }}.
+            Página {{ locations.number }} de {{ locations.paginator.num_pages }}
         </span>
 
         {% if locations.has_next %}
-            <a href="?page={{ locations.next_page_number }}">próxima</a>
+            <a href="?page={{ locations.next_page_number }}" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">próxima</a>
         {% endif %}
     </span>
 </div>

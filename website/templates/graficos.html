@@ -11,13 +11,13 @@
   </head>
   <body>
     <nav>
-      <div class="logo">DesabaMenos</div>
+      <div class="logo"><p>DesabaMenos</p></div>
       <input type="checkbox" id="click">
       <label for="click" class="menu-btn">
         <i class="fas fa-bars"></i>
       </label>
       <ul>
-        <li><a href="#">Posts</a></li>
+        <li><a href="{% url 'post' %}">Posts</a></li>
         <li><a id="home" class="#" href="{% url 'maps' %}">Maps</a></li>
         <li><a id="blog" class="#" href="{% url 'profile' %}">Profile</a></li>
         <li><a id="profile" href="{% url 'graficos' %}">Graficos</a></li>
@@ -29,17 +29,22 @@
     <div class="content">
 
     <div class="graficos">
-      <div class="grafico">
-        <p>Municípios com ocorrência de escorregamentos ou deslizamentos de encostas nos últimos 4 anos por áreas de ocorrência, por medidas adotadas para evitar ou minimizar danos e por classe de tamanho da população do município</p>
-      <canvas id="grafico1"></canvas>
+
+       <p>Municípios com ocorrência de escorregamentos ou deslizamentos de encostas nos últimos 4 anos por áreas de ocorrência, por medidas adotadas para evitar ou minimizar danos e por classe de tamanho da população do município</p>
+        <div class="grafico">
+            <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+       <canvas id="grafico1"></canvas>
       </div>
-      <div class="grafico">
+
         <p>Número de municípios, total e os que possuem encostas no perímetro urbano, por tipo de situação das encostas</p>
+      <div class="grafico">
+          <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
         <canvas id="grafico2"></canvas>
       </div>
 
-      <div class="grafico">
         <p>Municípios, total e atingidos por enchentes ou inundações graduais, enchurradas ou inundações bruscas ou escorregamentos ou deslizamenrtos de encostas nos últimos 4 anos, por algumas características dos desastres naturais e por classe de tamanho da população do município</p>
+      <div class="grafico">
+          <p> aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
         <canvas id="grafico3"></canvas>
       </div>
 
